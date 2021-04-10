@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime community Group Forum</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Nova-Mono" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css"/>
+<script src="http://code.jquery.com/jquery.js"></script>
+<link rel="icon" href="assets/logo_2.png" />
+<style>
+* {box-sizing: border-box;
+  font-family: 'Nova-Mono';
+
+}
+body {  
+  margin: 0;       
+  background-color: #292929;
+}
+
+.topnav {
+
+  overflow: hidden;
+  background-color: #050505;
+}
+
+.topnav .login-container {
+  float: right;
+}
+
+.topnav input[type=text],.topnav input[type=password] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width:170px;
+}
+.topnav input[type=checkbox] {
+    border: 1px solid #ccc; 
+  }
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.topnav .login-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background-color: #ffa31a;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background-color: #9b6008;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text],input[type=password], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+img {
+position:relative;    
+width:170px;
+height:55px;
+display:inline-block;
+
+}
+
+  .right_column{
+    color:rgb(253, 249, 249);
+  }
+  .hover{
+    color: #ffa31a;
+    font-size: 15px;
+
+  }
+  .hover:hover{
+    color: #d88a16;
+  }
+ 
+  p.paragraph_2{
+font-size:15px;
+color:#808080;
+  }
+  p.paragraph_3{
+ font-size:25px;
+color:#000;
+text-align: center;
+
+  }
+  label.email{
+color:#000;
+font-size:20px;
+  }
+  label.password{
+    color:#000;
+    font-size:20px;
+  }
+</style>
+<style>
+
+h1.title{
+color: #000;
+
+}
+</style>
+<style>
+    .container {
+  padding: 16px;
+  background-color: white;
+  width:35%;
+  float:right;
+  margin-right: 100px;
+  margin-top: 15px;
+  border-radius: 13px;
+  position:absolute;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input.firstname{
+margin: 5px 0 22px 0;
+}
+input.surname{
+margin: 5px 0 22px 0;
+}
+input.mobile-email{
+margin: 5px 0 22px 0;
+}
+input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+input.password{
+margin: 5px 0 22px 0;
+}
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #ffa31a;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius:10px ;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: #ffa31a;
+  text-decoration: none;
+}
+a:hover{
+    color: #8d5603d0;
+    opacity:1;
+}
+</style>
+<style>
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  height: 28px;
+
+  
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: #ffa31a;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+  width:100%;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #ffa31a;
+  top: 100%;
+  left: 0px;
+  right: 0px;
+  z-index: 99;
+  width:100%;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+</style>
+<style>
+img.help{
+
+    width:25px;
+    height: 25px;
+    position:absolute;
+    left:105px;
+    top:5px;
+}
+
+div.help_me {
+  position: absolute;
+  display: inline-block;
+}
+
+span.help_me_1{
+  visibility: hidden;
+  width: 120px;
+  background-color: #ffa31a;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  left:130px;
+  font-size:10px;
+
+}
+div.help_me:hover span.help_me_1{
+  visibility: visible;
+}
+img.help_gender{
+
+width:25px;
+height: 25px;
+position:absolute;
+left:10px;
+top:-2px;
+}
+div.help_please {
+  position: absolute;
+  display: inline-block;
+}
+.help000{
+  visibility: hidden;
+  width: 120px;
+  background-color: #ffa31a;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  left:35px;
+  top:-4px;
+  font-size:10px;
+
+}
+div.help_please:hover span.help000{
+  visibility: visible;
+}
+a.learn_more{
+font-family: Arial, Helvetica, sans-serif;
+color:#000000;
+}
+a.learn_more:hover{
+color: rgba(90, 90, 90, 0.856);
+
+}
+a.learn_more_gender{
+font-family: Arial, Helvetica, sans-serif;
+color:#000000;
+}
+a.learn_more_gender:hover{
+color: rgba(90, 90, 90, 0.856);
+
+}
+p.gender{
+
+    color: rgb(0, 0, 0);;
+    font-size: 25px;
+}
+
+input.gender_female[type=radio],
+input.gender_male[type=radio],
+input.gender_custom[type=radio]{
+    color: #000;
+}
+label.remember_me{
+    color: #fff;;
+}
+div.gender_01{
+line-height:1.0;
+}
+label.label_register{
+    font-size:20px;
+}
+p.footer, a.footer{
+font-family:Arial, Helvetica, sans-serif;
+font-size: medium;
+margin:0;
+padding:0;
+text-align:center;
+
+}
+
+</style>
+<style>
+div.left-division{
+margin-top: 50px;
+margin-left: 500px;
+margin-right:50px;
+background-color: #808080;
+border:0px;
+border-radius: 10px;
+position: absolute;
+left:60px;
+padding-right:120px;
+padding-left:120px;
+
+
+}
+p.intro{
+line-height: 0;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 30px;
+text-align: center;
+color: #000;
+
+}
+p.intro01{
+font-family: Arial, Helvetica, sans-serif;  
+font-size: 20px;
+text-align: center;
+color: #000;
+}
+hr.hr01{
+width:auto;
+}
+p.name_title{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 30px;
+}
+
+</style>
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #808080; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+  
+</style>
+
+</head>
+<body>
+
+<div class="topnav">
+  <a href="index.html"><img src="assets/logo.png" /></a>
+  <div class="login-container">
+    <form action="index.html">
+      <input type="text" placeholder="Username" name="username" required>
+      <input type="password" placeholder="Password" name="psw" required> 
+      <button type="submit" onclick="song();"><i class="mdi mdi-login" ></i>  Login</button>
+    </form> 
+   <input type="checkbox" id="checkbox"><label class="remember_me">Remember me</label>
+     <a href="#" style="position:relative; left:80px; text-decoration: none;" class="hover">Forgot password?</a>
+     </div>
+ 
+</div>
+<div> 
+<form action="" method="GET">
+    <div class="container">
+      <p class="paragraph_3">Sign up.</p>
+      <hr>
+      <input type="text" class="firstname" placeholder="firstname" name="firstname" id="firstname" required>
+      <input type="text" class="surname" placeholder="Surname" name="password" id="password" required>
+      <input type="text" class="mobile-email" placeholder="Enter mobile or Email address" name="mobile-email" id="mobile-email" required>
+      <input type="password" class="password" placeholder="Enter new password" name="password" id="password" required>
+      <div class="custom-select" style="width:100px;">
+        <select>
+          <option value="0">Month</option>
+          <option value="January">January</option>
+          <option value="Feburary">Feburary</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+      </div>
+      <div class="custom-select" style="width:100px; bottom:28px; left:120px">
+        <select>
+          <option value="0">Day</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+      </div>   
+      <div class="custom-select" style="width:100px; bottom:56px; left:240px; ">
+        <select name="select">
+          <option value="0">Year</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+          <option value="2008">2008</option>
+          <option value="2007">2007</option>
+          <option value="2006">2006</option>
+          <option value="2005">2005</option>
+          <option value="2004">2004</option>
+          <option value="2003">2003</option>
+          <option value="2002">2002</option>
+          <option value="2001">2001</option>
+          <option value="2000">2000</option>
+          <option value="1999">1999</option>
+          <option value="1998">1998</option>
+          <option value="1997">1997</option>
+          <option value="1996">1996</option>
+          <option value="1995">1995</option>
+          <option value="1993">1993</option>
+          <option value="1992">1992</option>
+          <option value="1991">1991</option>
+          <option value="1990">1990</option>
+          <option value="1989">1989</option>
+          <option value="1988">1988</option>
+          <option value="1986">1986</option>
+          <option value="1985">1985</option>
+          <option value="1984">1984</option>
+          <option value="1983">1983</option>
+          <option value="1982">1982</option>
+          <option value="1981">1981</option>
+          <option value="1980">1980</option>
+          <option value="1979">1979</option>
+          <option value="1978">1978</option>
+          <option value="1977">1977</option>
+          <option value="1976">1976</option>
+          <option value="1975">1975</option>
+          <option value="1974">1974</option>
+          <option value="1973">1973</option>
+          <option value="1972">1972</option>
+          <option value="1971">1971</option>
+          <option value="1970">1970</option>
+          <option value="1969">1969</option>
+          <option value="1968">1968</option>
+          <option value="1967">1967</option>
+          <option value="1966">1966</option>
+          <option value="1965">1965</option>
+          <option value="1964">1964</option>
+          <option value="1963">1963</option>
+          <option value="1962">1962</option>
+          <option value="1961">1961</option>
+          <option value="1960">1960</option>
+          
+          
+        </select>
+      
+       <div class="help_me"><img src="assets/help_1.png" class="help">
+        <span class="help_me_1">Why do we need to provide my Birthday? <a href="#" class="learn_more"><br>
+            Click learn more.</a></span>
+            
+      </div>
+      
+      </div>  
+      <div class="gender_01"> 
+      <p class="gender">Gender</p>
+      <input type="radio" name="gender" value="male" class="gender_male"> Male
+      <input type="radio" name="gender" value="female" class="gender_female"> Female
+      <input type="radio" name="gender" value="custom" class="gender_custom"> Custom
+      
+      <div class="help_please"><img src="assets/help_1.png" class="help_gender">
+        <span class="help000">If you don't have gender,<a href="#" class="learn_more_gender"><br>
+            Click learn more.</a></span>
+    </div>
+    </div>
+      <hr>
+      <p class="paragraph_2">By clicking sign up, you agree to our<a href="#"> Terms, Data Policy</a> and
+        <a href="#">Cookie Policy</a>. You may receive SMS notification from us and can otp out at anytime.
+    </p>
+  
+      <button type="submit" class="registerbtn" id="registerbtn" onclick="sing();"><label class="label_register"  >Sign up</label></button>
+      <br>
+      <br>
+      <div class="footer">
+          <p class="footer"><a href="#" class="footer">Create a page</a> for celebrity, band or business</p>
+      </div>
+    </div>
+
+  </form>
+<div class="left-division">
+    <br>
+    <p class="intro">Get free premium for 15 days! </p>
+    <p class="intro01">Signup now!</p>
+    <hr class="hr01"> 
+    <center>
+    <div class="video">
+        <div class="title_01"><p class="name_title">POV 1</p></div>
+    <video width="500" controls autoplay="autoplay" muted loop class="video_01" > 
+        <source src="assets/ads_2.mp4" type="video/mp4">
+        <source src="assets/ads_2.ogv" type="video/ogv">
+        <source src="assets/ads_2.mp4" type="video/webm">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+<style>
+  .lastpart {
+  position: absolute;
+  right: 0;
+  top:140%;
+  left: 0;
+  padding: 1rem;
+  background-color: #c7c7c7;
+  text-align: center;
+}
+</style>
+<div class="lastpart">Nyorn Group Inc. All Right Reserves  <strong>&trade; </strong>.</div>
+<script>
+ var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+    </script>
+ <script>
+     var audio = new Audio ('assets/yamero.mp3');
+ 
+     function sing(){
+         audio.play();
+     }
+     
+
+ </script>
+ <script>
+    var audio_1 = new Audio ('assets/ara-ara-ma-maa.mp3');
+    function song(){
+         audio_1.play();
+     }
+ </script>
+</body>
+</html>
